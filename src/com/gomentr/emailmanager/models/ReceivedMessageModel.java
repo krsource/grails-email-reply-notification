@@ -1,4 +1,4 @@
-package Models;
+package com.gomentr.emailmanager.models;
 
 import javax.mail.Address;
 import javax.mail.Message;

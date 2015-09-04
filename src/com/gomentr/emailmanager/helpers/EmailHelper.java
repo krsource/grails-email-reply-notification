@@ -1,6 +1,6 @@
-package Helpers;
+package com.gomentr.emailmanager.helpers;
 
-import Models.ReceivedMessageModel;
+import com.gomentr.emailmanager.models.ReceivedMessageModel;
 
 import javax.mail.*;
 import javax.mail.internet.*;

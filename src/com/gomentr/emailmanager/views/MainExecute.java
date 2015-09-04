@@ -1,11 +1,6 @@
-package Views;
+package com.gomentr.emailmanager.views;
 
-import Helpers.EmailHelper;
-import Models.ReceivedMessageModel;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.gomentr.emailmanager.helpers.EmailHelper;
 
 public class MainExecute {
 
