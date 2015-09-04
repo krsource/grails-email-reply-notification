@@ -31,7 +31,7 @@ public class ReceivedMessageModel {
     public String getID() {
         return this.id;
     }
-    public void setID(String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -90,7 +90,7 @@ public class ReceivedMessageModel {
                                 Address fromAddress, Address toAddress,
                                 String subject, String content, String parsedContent,
                                 Date sentDate, Message message) {
-        setID(id);
+        setId(id);
 
         setFromAddress(fromAddress);
         setToAddress(toAddress);

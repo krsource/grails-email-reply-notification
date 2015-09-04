@@ -30,7 +30,7 @@ public class MainExecute {
 
         //Email Sender Only
         EmailHelper emailSenderOnly = new EmailHelper(emailPersonalName, emailAddress, emailPassword, emailReplyTo, senderHost, senderPort);
-        //emailSenderOnly.SendEmail("11-12", "omaddam@gmail.com", "Testing my sender plugin", "I told you that i am just testing it!!!!");
+        //emailSenderOnly.sendEmail("11-12", "omaddam@gmail.com", "Testing my sender plugin", "I told you that i am just testing it!!!!");
 
         //Email Receiver Only
         EmailHelper emailReceiverOnly = new EmailHelper(emailPersonalName, emailAddress, emailPassword, emailReplyTo, receivingHost, receivingPort, inboxFolderName);
@@ -38,7 +38,7 @@ public class MainExecute {
         System.out.println("Total: " + emails.size());
         for(ReceivedMessageModel message : emails) {
             System.out.println("****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************");
-            System.out.println("ID: " + message.getID().toString());
+            System.out.println("ID: " + message.getId().toString());
             System.out.println("From: " + message.getFromAddress().toString());
             System.out.println("Subject: " + message.getSubject());
             System.out.println("Parsed Content:" + message.getParsedContent());// + "\n** Unparsed:" + message.getContent());
@@ -51,7 +51,7 @@ public class MainExecute {
         System.out.println("Total: " + emails.size());
         for(ReceivedMessageModel message : emails) {
             System.out.println("****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************");
-            System.out.println("ID: " + message.getID().toString());
+            System.out.println("ID: " + message.getId().toString());
             System.out.println("From: " + message.getFromAddress());
             System.out.println("Subject: " + message.getSubject());
             System.out.println("Parsed Content:" + message.getParsedContent());// + "\n** Unparsed:" + message.getContent());
