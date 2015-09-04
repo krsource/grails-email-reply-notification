@@ -1,6 +1,7 @@
 package com.gomentr.emailmanager.helpers;
 
 import com.gomentr.emailmanager.models.ReceivedMessageModel;
+import com.gomentr.emailmanager.parsers.*;
 
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -74,7 +75,7 @@ public class EmailHelper {
      * We require the email address of the receipt, the subject, and the body
      * The ID is used to identify an email when the user replies back
      */
-    public void SendEmail(String id, String to, String subject, String body)
+    public void sendEmail(String id, String to, String subject, String body)
             throws Exception {
 
         String replyTo = createRecipientWithId(id);
@@ -327,163 +328,21 @@ public class EmailHelper {
     protected String parseEmailReaderMessageContent(String content) {
         String parsedContent = content;
 
-        parsedContent = parseEmailReaderMessageContentParser1(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser2(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser3(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser4(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser5(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser6(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser7(parsedContent);
-        parsedContent = parseEmailReaderMessageContentParser8(parsedContent);
+        ArrayList<ContentParser> parsers = new ArrayList<ContentParser>() {{
+            add(new TextContentParser());
+            add(new HtmlContentParser());
+            add(new GmailContentParser());
+            add(new CssContentParser());
+            add(new ScriptContentParser());
+            add(new QuoteContentParser());
+        }};
 
-
-        parsedContent = parseEmailReaderMessageContentParserFinal(parsedContent);
-
-        return parsedContent;
-    }
-
-    //Parse Text Reply
-    private String parseEmailReaderMessageContentParser1(String content) {
-        String parsedContent = "";
-
-        String[] lines = content.split("\n");
-        for (String line : lines) {
-            if (line == "")
-                continue;
-            if (!line.startsWith(">"))
-                parsedContent += line + "\n";
+        for (ContentParser parser : parsers) {
+            parsedContent = parser.parse(parsedContent);
         }
 
-        if (parsedContent.length() > 0 && parsedContent.charAt(parsedContent.length()-1)=='\n')
-            parsedContent = parsedContent.substring(0, parsedContent.length() - 1);
-
         return parsedContent;
     }
-    //Remove <blockquote> and its content
-    private String parseEmailReaderMessageContentParser2(String content) {
-        String parsedContent = content;
-
-        String patternString = "(?s)(<|&lt;)blockquote.*(<|&lt;)/blockquote(>|&gt)";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove <div class="gmail_extra"> and its content
-    private String parseEmailReaderMessageContentParser3(String content) {
-        String parsedContent = content;
-
-        String patternString = "(?s)(<|&lt;)div class=\"gmail_extra\".*";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove <style"> and its content
-    private String parseEmailReaderMessageContentParser4(String content) {
-        String parsedContent = content;
-
-        String patternString = "(?s)(<|&lt;)style.*(<|&lt;)/style(>|&gt)";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove <script"> and its content
-    private String parseEmailReaderMessageContentParser5(String content) {
-        String parsedContent = content;
-
-        String patternString = "(?s)(<|&lt;)script.*(<|&lt;)/script(>|&gt)";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove <head"> and its content
-    private String parseEmailReaderMessageContentParser6(String content) {
-        String parsedContent = content;
-
-        String patternString = "(?s)(<|&lt;)head.*(<|&lt;)/head(>|&gt)";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove <html> and <body> and <span> tags
-    private String parseEmailReaderMessageContentParser7(String content) {
-        String parsedContent = content;
-
-        String patternString = "(<html[^>]*>)|(<body[^>]*>)|(<span[^>]*>)|(</html>)|(</body>)|(</span>)";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove style and class attributes
-    private String parseEmailReaderMessageContentParser8(String content) {
-        String parsedContent = content;
-
-        String patternString = "( class=\"[^\"]*\")|( style=\"[^\"]*\")";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-    //Remove [On .... wrote:] | [From ...]
-    private String parseEmailReaderMessageContentParserFinal(String content) {
-        String parsedContent = content;
-
-        /** general spacers for time and date */
-        String spacers = "[\\s,/\\.\\-]";
-
-        /** matches times */
-        String timePattern  = "(?:[0-2])?[0-9]:[0-5][0-9](?::[0-5][0-9])?(?:(?:\\s)?[AP]M)?";
-
-        /** matches day of the week */
-        String dayPattern   = "(?:(?:Mon(?:day)?)|(?:Tue(?:sday)?)|(?:Wed(?:nesday)?)|(?:Thu(?:rsday)?)|(?:Fri(?:day)?)|(?:Sat(?:urday)?)|(?:Sun(?:day)?))";
-
-        /** matches day of the month (number and st, nd, rd, th) */
-        String dayOfMonthPattern = "[0-3]?[0-9]" + spacers + "*(?:(?:th)|(?:st)|(?:nd)|(?:rd))?";
-
-        /** matches months (numeric and text) */
-        String monthPattern = "(?:(?:Jan(?:uary)?)|(?:Feb(?:uary)?)|(?:Mar(?:ch)?)|(?:Apr(?:il)?)|(?:May)|(?:Jun(?:e)?)|(?:Jul(?:y)?)" +
-                "|(?:Aug(?:ust)?)|(?:Sep(?:tember)?)|(?:Oct(?:ober)?)|(?:Nov(?:ember)?)|(?:Dec(?:ember)?)|(?:[0-1]?[0-9]))";
-
-        /** matches years (only 1000's and 2000's, because we are matching emails) */
-        String yearPattern  = "(?:[1-2]?[0-9])[0-9][0-9]";
-
-        /** matches a full date */
-        String datePattern     = "(?:" + dayPattern + spacers + "+)?(?:(?:" + dayOfMonthPattern + spacers + "+" + monthPattern + ")|" +
-                "(?:" + monthPattern + spacers + "+" + dayOfMonthPattern + "))" +
-                spacers + "+" + yearPattern;
-
-        /** matches a date and time combo (in either order) */
-        String dateTimePattern = "((?:" + datePattern + "[\\s,]*((?:(?:at)|(?:@))?\\s*" + timePattern + "))?|" +
-                "(?:" + timePattern + "[\\s,]*(?:on)?\\s*"+ datePattern + "))";
-
-        /** matches a leading line such as
-         * ----Original Message----
-         * or simply
-         * ------------------------
-         */
-        String leadInLine    = "-+\\s*(?:Original(?:\\sMessage)?)?\\s*-+";
-
-        /** matches a header line indicating the date */
-        String dateLine    = "(?:(?:date)|(?:sent)|(?:time)):\\s*"+ dateTimePattern + ".*";
-
-        /** matches a subject or address line */
-        String subjectOrAddressLine    = "((?:from)|(?:subject)|(?:b?cc)|(?:to)):.*((?:from)|(?:subject)|(?:b?cc)|(?:to)):.*";
-
-        /** matches gmail style quoted text beginning, i.e.
-         * On Mon Jun 7, 2010 at 8:50 PM, Simon wrote:
-         */
-        String gmailQuotedTextBeginning = "(On\\s+" + dateTimePattern + ".*wrote:)";
-
-
-        /** matches the start of a quoted section of an email */
-        Pattern QUOTED_TEXT_BEGINNING = Pattern.compile("(?i)(?:(?:" + leadInLine + ")?" +
-                        "(?:(?:" +subjectOrAddressLine + ")|(?:" + dateLine + ")){2,6})|(?:" + gmailQuotedTextBeginning + ")"
-        );
-
-        String patternString = "(" + QUOTED_TEXT_BEGINNING.toString() + ").*";
-        parsedContent = parsedContent.replaceAll(patternString, "");
-
-        return parsedContent;
-    }
-
 
     /**
      * Processes the ID passed by the email sender and collected by email reader

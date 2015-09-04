@@ -28,7 +28,7 @@ public class ReceivedMessageModel {
 
     //region Setters and getters
 
-    public String getID() {
+    public String getId() {
         return this.id;
     }
     public void setId(String id) {
