@@ -31,75 +31,75 @@ public class ReceivedMessageModel {
     public String getID() {
         return this.id;
     }
-    public void setID(String ID) {
-        this.id = ID;
+    public void setID(String id) {
+        this.id = id;
     }
 
     public Address getFromAddress() {
         return this.fromAddress;
     }
-    public void setFromAddress(Address FromAddress) {
-        this.fromAddress = FromAddress;
+    public void setFromAddress(Address fromAddress) {
+        this.fromAddress = fromAddress;
     }
     public Address getToAddress() {
         return this.toAddress;
     }
-    public void setToAddress(Address ToAddress) {
-        this.toAddress = ToAddress;
+    public void setToAddress(Address toAddress) {
+        this.toAddress = toAddress;
     }
 
     public String getSubject() {
         return this.subject;
     }
-    public void setSubject(String Subject) {
-        this.subject = Subject;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
     public String getContent() {
         return this.content;
     }
-    public void setContent(String Content) {
-        this.content = Content;
+    public void setContent(String content) {
+        this.content = content;
     }
     public String getParsedContent() {
         return this.parsedContent;
     }
-    public void setParsedContent(String ParsedContent) {
-        this.parsedContent = ParsedContent;
+    public void setParsedContent(String parsedContent) {
+        this.parsedContent = parsedContent;
     }
 
 
     public Date getSentDate() {
         return this.sentDate;
     }
-    public void setSentDate(Date SentDate) {
-        this.sentDate = SentDate;
+    public void setSentDate(Date sentDate) {
+        this.sentDate = sentDate;
     }
 
     public Message getMessage() {
         return this.message;
     }
-    public void setMessage(Message Message) {
-        this.message = Message;
+    public void setMessage(Message message) {
+        this.message = message;
     }
 
     //endregion
 
     //region Constructors
 
-    public ReceivedMessageModel(String ID,
-                                Address FromAddress, Address ToAddress,
-                                String Subject, String Content, String ParsedContent,
-                                Date SentDate, Message Message) {
-        setID(ID);
+    public ReceivedMessageModel(String id,
+                                Address fromAddress, Address toAddress,
+                                String subject, String content, String parsedContent,
+                                Date sentDate, Message message) {
+        setID(id);
 
-        setFromAddress(FromAddress);
-        setToAddress(ToAddress);
+        setFromAddress(fromAddress);
+        setToAddress(toAddress);
 
-        setSubject(Subject);
-        setContent(Content);
-        setParsedContent(ParsedContent);
+        setSubject(subject);
+        setContent(content);
+        setParsedContent(parsedContent);
 
-        setMessage(Message);
+        setMessage(message);
     }
 
     //endregion

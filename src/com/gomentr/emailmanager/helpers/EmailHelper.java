@@ -74,14 +74,14 @@ public class EmailHelper {
      * We require the email address of the receipt, the subject, and the body
      * The ID is used to identify an email when the user replies back
      */
-    public void SendEmail(String ID, String To, String Subject, String Body)
+    public void SendEmail(String id, String to, String subject, String body)
             throws Exception {
 
-        String ReplyTo = CreateRecipientWithId(ID);
-        Properties props = PrepareEmailSenderProperties();
+        String replyTo = createRecipientWithId(id);
+        Properties props = prepareEmailSenderProperties();
 
         Session session = Session.getDefaultInstance(props, null);
-        MimeMessage message = PrepareEmailSenderMessage(session, To, ReplyTo, Subject, Body);
+        MimeMessage message = prepareEmailSenderMessage(session, to, replyTo, subject, body);
 
         Transport transport = PrepareEmailSenderTransport(session);
         transport.connect(senderHost, emailAddress, emailPassword);
@@ -95,16 +95,16 @@ public class EmailHelper {
      * Prepares the reply to for the email sender
      * It will include the email identifier in the reply to
      */
-    protected String CreateRecipientWithId(String ID) {
+    protected String createRecipientWithId(String id) {
         String[] array = emailAddress.split("@");
-        String replyTo = array[0] + "+" + ID + "@" + array[1];
+        String replyTo = array[0] + "+" + id + "@" + array[1];
         return replyTo;
     }
 
     /**
      * Prepares the properties for the email sender
      */
-    protected Properties PrepareEmailSenderProperties() {
+    protected Properties prepareEmailSenderProperties() {
         Properties props = System.getProperties();
         props.put("mail.smtp.starttls.enable", true);
         props.setProperty("mail.smtp.ssl.trust", senderHost);
@@ -119,10 +119,10 @@ public class EmailHelper {
     /**
      * Prepares the message to be sent by the email sender
      */
-    protected MimeMessage PrepareEmailSenderMessage(Session Session, String To, String ReplyTo, String Subject, String Body)
+    protected MimeMessage prepareEmailSenderMessage(Session session, String to, String replyTo, String subject, String body)
             throws Exception {
 
-        MimeMessage message = new MimeMessage(Session);
+        MimeMessage message = new MimeMessage(session);
 
         //From
         InternetAddress fromAddress = new InternetAddress(emailAddress);
@@ -130,18 +130,18 @@ public class EmailHelper {
         message.setFrom(fromAddress);
 
         //Reply to
-        InternetAddress[] replyTo = new InternetAddress[1];
-        replyTo[0] = new InternetAddress(ReplyTo);
-        replyTo[0].setPersonal(emailPersonalName);
-        message.setReplyTo(replyTo);
+        InternetAddress[] replyToAddress = new InternetAddress[1];
+        replyToAddress[0] = new InternetAddress(replyTo);
+        replyToAddress[0].setPersonal(emailPersonalName);
+        message.setReplyTo(replyToAddress);
 
         //To
-        InternetAddress toAddress = new InternetAddress(To);
+        InternetAddress toAddress = new InternetAddress(to);
         message.addRecipient(Message.RecipientType.TO, toAddress);
 
         //Subject/Body
-        message.setSubject(Subject);
-        message.setText(Body);
+        message.setSubject(subject);
+        message.setText(body);
 
         return message;
     }
@@ -149,9 +149,9 @@ public class EmailHelper {
     /**
      * Prepares the transport layer for the email sender
      */
-    protected Transport PrepareEmailSenderTransport(Session Session)
+    protected Transport PrepareEmailSenderTransport(Session session)
             throws Exception {
-        Transport transport = Session.getTransport("smtp");
+        Transport transport = session.getTransport("smtp");
         return transport;
     }
 
@@ -159,31 +159,31 @@ public class EmailHelper {
 
     //region EMAIL RECEIVING METHODS
 
-    public List<ReceivedMessageModel> readEmails(boolean MoveEmailsAfterProcess)
+    public List<ReceivedMessageModel> readEmails(boolean moveEmailsAfterProcess)
             throws Exception {
 
-        Properties props = PrepareEmailReaderProperties();
+        Properties props = prepareEmailReaderProperties();
         Session session = Session.getDefaultInstance(props, null);
 
-        Store store = PrepareEmailReaderStore(session);
+        Store store = prepareEmailReaderStore(session);
         store.connect(receivingHost, emailAddress, emailPassword);
 
-        Folder inboxFolder = PrepareEmailReaderFolder(store, inboxFolderName);
-        Folder processedEmailsFolder = processedEmailsFolderName != null ? PrepareEmailReaderFolder(store, processedEmailsFolderName) : null;
-        Folder errorEmailsFolder = errorEmailsFolderName != null ? PrepareEmailReaderFolder(store, errorEmailsFolderName) : null;
+        Folder inboxFolder = prepareEmailReaderFolder(store, inboxFolderName);
+        Folder processedEmailsFolder = processedEmailsFolderName != null ? prepareEmailReaderFolder(store, processedEmailsFolderName) : null;
+        Folder errorEmailsFolder = errorEmailsFolderName != null ? prepareEmailReaderFolder(store, errorEmailsFolderName) : null;
 
         List<ReceivedMessageModel> processedEmails = new ArrayList();
         Message[] messages = inboxFolder.getMessages();
         for(Message message : messages) {
-            ReceivedMessageModel processedEmail = ProcessEmailReaderMessage(message);
+            ReceivedMessageModel processedEmail = processEmailReaderMessage(message);
 
             if (processedEmail != null)
                 processedEmails.add(processedEmail);
 
-            if (MoveEmailsAfterProcess && processedEmail == null && errorEmailsFolder != null)
-                MoveMessageToAnotherFolder(message, inboxFolder, errorEmailsFolder);
-            else if (MoveEmailsAfterProcess && processedEmail != null && processedEmailsFolder != null)
-                MoveMessageToAnotherFolder(message, inboxFolder, processedEmailsFolder);
+            if (moveEmailsAfterProcess && processedEmail == null && errorEmailsFolder != null)
+                moveMessageToAnotherFolder(message, inboxFolder, errorEmailsFolder);
+            else if (moveEmailsAfterProcess && processedEmail != null && processedEmailsFolder != null)
+                moveMessageToAnotherFolder(message, inboxFolder, processedEmailsFolder);
         }
 
         store.close();
@@ -196,7 +196,7 @@ public class EmailHelper {
     /**
      * Prepares the properties for the email reader
      */
-    protected Properties PrepareEmailReaderProperties() {
+    protected Properties prepareEmailReaderProperties() {
         Properties props = System.getProperties();
         props.setProperty("mail.store.protocol", "imaps");
         props.setProperty("mail.imap.socketFactory.fallback", "false");
@@ -215,18 +215,18 @@ public class EmailHelper {
     /**
      * Prepares the store for the email reader
      */
-    protected Store PrepareEmailReaderStore(Session Session)
+    protected Store prepareEmailReaderStore(Session session)
             throws Exception {
-        Store store = Session.getStore("imaps");
+        Store store = session.getStore("imaps");
         return store;
     }
 
     /**
      * Prepares a folder for the email reader
      */
-    protected Folder PrepareEmailReaderFolder(Store Store, String FolderName)
+    protected Folder prepareEmailReaderFolder(Store store, String folderName)
             throws Exception {
-        Folder folder = Store.getFolder(FolderName);
+        Folder folder = store.getFolder(folderName);
         folder.open(Folder.READ_WRITE);
         return folder;
     }
@@ -234,65 +234,65 @@ public class EmailHelper {
     /*
      * Moves a message to a folder
      */
-    protected  void MoveMessageToAnotherFolder(Message Message, Folder SourceFolder, Folder DestinationFolder)
+    protected  void moveMessageToAnotherFolder(Message message, Folder sourceFolder, Folder destinationFolder)
             throws Exception {
         Message[] msgs = new Message[1];
-        msgs[0] = Message;
-        SourceFolder.copyMessages(msgs, DestinationFolder);
-        Message.setFlag(Flags.Flag.DELETED, true);
+        msgs[0] = message;
+        sourceFolder.copyMessages(msgs, destinationFolder);
+        message.setFlag(Flags.Flag.DELETED, true);
     }
 
     /**
      * Processes the messages that are fetched by the email reader
      */
-    protected ReceivedMessageModel ProcessEmailReaderMessage(Message Message)
+    protected ReceivedMessageModel processEmailReaderMessage(Message message)
             throws Exception {
 
-        String ID = ProcessEmailReaderMessageID(Message);
-        if (ID == null)
+        String id = processEmailReaderMessageID(message);
+        if (id == null)
             return null;
 
-        String content = ProcessEmailReaderMessageContent(Message);
+        String content = processEmailReaderMessageContent(message);
         if (content == null)
             return null;
-        String parsedContent = ParseEmailReaderMessageContent(content);
+        String parsedContent = parseEmailReaderMessageContent(content);
 
-        Address fromAddress = Message.getFrom()[0];
-        Address toAddress = Message.getAllRecipients()[0];
+        Address fromAddress = message.getFrom()[0];
+        Address toAddress = message.getAllRecipients()[0];
 
-        String subject = Message.getSubject();
-        Date sentDate = Message.getSentDate();
+        String subject = message.getSubject();
+        Date sentDate = message.getSentDate();
 
-        return new ReceivedMessageModel(ID, fromAddress, toAddress, subject, content, parsedContent, sentDate, Message);
+        return new ReceivedMessageModel(id, fromAddress, toAddress, subject, content, parsedContent, sentDate, message);
     }
 
     /**
      * Processes the content of a message
      */
-    protected String ProcessEmailReaderMessageContent(Message Message)
+    protected String processEmailReaderMessageContent(Message message)
             throws Exception {
         String content = null;
-        Object msgContent = Message.getContent();
+        Object msgContent = message.getContent();
         if (msgContent instanceof Multipart) {
             Multipart multipart = (Multipart) msgContent;
             for (int j = 0; j < multipart.getCount(); j++)
                 content = getText(multipart.getBodyPart((j)));
         }
         else
-            content = Message.getContent().toString();
+            content = message.getContent().toString();
         return content;
     }
-    private String getText(Part p) throws
+    private String getText(Part part) throws
             MessagingException, IOException {
-        if (p.isMimeType("text/*")) {
-            String s = (String)p.getContent();
-            boolean textIsHtml = p.isMimeType("text/html");
+        if (part.isMimeType("text/*")) {
+            String s = (String)part.getContent();
+            boolean textIsHtml = part.isMimeType("text/html");
             return s;
         }
 
-        if (p.isMimeType("multipart/alternative")) {
+        if (part.isMimeType("multipart/alternative")) {
             // prefer html text over plain text
-            Multipart mp = (Multipart)p.getContent();
+            Multipart mp = (Multipart)part.getContent();
             String text = null;
             for (int i = 0; i < mp.getCount(); i++) {
                 Part bp = mp.getBodyPart(i);
@@ -309,8 +309,8 @@ public class EmailHelper {
                 }
             }
             return text;
-        } else if (p.isMimeType("multipart/*")) {
-            Multipart mp = (Multipart)p.getContent();
+        } else if (part.isMimeType("multipart/*")) {
+            Multipart mp = (Multipart)part.getContent();
             for (int i = 0; i < mp.getCount(); i++) {
                 String s = getText(mp.getBodyPart(i));
                 if (s != null)
@@ -321,32 +321,32 @@ public class EmailHelper {
     }
 
     /**
-     * Parse the conentent of a message
+     * Parse the content of a message
      * Clean the message and get the reply body only
      */
-    protected String ParseEmailReaderMessageContent(String Content) {
-        String parsedContent = Content;
+    protected String parseEmailReaderMessageContent(String content) {
+        String parsedContent = content;
 
-        parsedContent = ParseEmailReaderMessageContent_Parser1(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser2(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser3(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser4(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser5(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser6(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser7(parsedContent);
-        parsedContent = ParseEmailReaderMessageContent_Parser8(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser1(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser2(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser3(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser4(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser5(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser6(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser7(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParser8(parsedContent);
 
 
-        parsedContent = ParseEmailReaderMessageContent_ParserFinal(parsedContent);
+        parsedContent = parseEmailReaderMessageContentParserFinal(parsedContent);
 
         return parsedContent;
     }
 
     //Parse Text Reply
-    private String ParseEmailReaderMessageContent_Parser1(String Content) {
+    private String parseEmailReaderMessageContentParser1(String content) {
         String parsedContent = "";
 
-        String[] lines = Content.split("\n");
+        String[] lines = content.split("\n");
         for (String line : lines) {
             if (line == "")
                 continue;
@@ -360,8 +360,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove <blockquote> and its content
-    private String ParseEmailReaderMessageContent_Parser2(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser2(String content) {
+        String parsedContent = content;
 
         String patternString = "(?s)(<|&lt;)blockquote.*(<|&lt;)/blockquote(>|&gt)";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -369,8 +369,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove <div class="gmail_extra"> and its content
-    private String ParseEmailReaderMessageContent_Parser3(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser3(String content) {
+        String parsedContent = content;
 
         String patternString = "(?s)(<|&lt;)div class=\"gmail_extra\".*";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -378,8 +378,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove <style"> and its content
-    private String ParseEmailReaderMessageContent_Parser4(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser4(String content) {
+        String parsedContent = content;
 
         String patternString = "(?s)(<|&lt;)style.*(<|&lt;)/style(>|&gt)";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -387,8 +387,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove <script"> and its content
-    private String ParseEmailReaderMessageContent_Parser5(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser5(String content) {
+        String parsedContent = content;
 
         String patternString = "(?s)(<|&lt;)script.*(<|&lt;)/script(>|&gt)";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -396,8 +396,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove <head"> and its content
-    private String ParseEmailReaderMessageContent_Parser6(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser6(String content) {
+        String parsedContent = content;
 
         String patternString = "(?s)(<|&lt;)head.*(<|&lt;)/head(>|&gt)";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -405,8 +405,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove <html> and <body> and <span> tags
-    private String ParseEmailReaderMessageContent_Parser7(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser7(String content) {
+        String parsedContent = content;
 
         String patternString = "(<html[^>]*>)|(<body[^>]*>)|(<span[^>]*>)|(</html>)|(</body>)|(</span>)";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -414,8 +414,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove style and class attributes
-    private String ParseEmailReaderMessageContent_Parser8(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParser8(String content) {
+        String parsedContent = content;
 
         String patternString = "( class=\"[^\"]*\")|( style=\"[^\"]*\")";
         parsedContent = parsedContent.replaceAll(patternString, "");
@@ -423,8 +423,8 @@ public class EmailHelper {
         return parsedContent;
     }
     //Remove [On .... wrote:] | [From ...]
-    private String ParseEmailReaderMessageContent_ParserFinal(String Content) {
-        String parsedContent = Content;
+    private String parseEmailReaderMessageContentParserFinal(String content) {
+        String parsedContent = content;
 
         /** general spacers for time and date */
         String spacers = "[\\s,/\\.\\-]";
@@ -490,10 +490,10 @@ public class EmailHelper {
      * By default, it extracts it from the reply email
      * The default pattern is /\+[A-Za-z0-9-_]*\@/: GUID
      */
-    protected String ProcessEmailReaderMessageID(Message Message)
+    protected String processEmailReaderMessageID(Message message)
     throws Exception {
 
-        Address toAddress = Message.getAllRecipients()[0];
+        Address toAddress = message.getAllRecipients()[0];
 
         String patternString = "\\+[A-Za-z0-9-_]*@";
         Pattern pattern = Pattern.compile(patternString);
@@ -514,48 +514,48 @@ public class EmailHelper {
     /**
      * The full package
      */
-    public EmailHelper(String EmailPersonalName, String EmailAddress, String EmailPassword, String ReplyToAddress,
-                       String SenderHost, String SenderPort,
-                       String ReceivingHost, String ReceivingPort,
-                       String InboxFolderName, String ProcessedEmailsFolderName, String ErrorEmailsFolderName) {
+    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
+                       String senderHost, String senderPort,
+                       String receivingHost, String receivingPort,
+                       String inboxFolderName, String processedEmailsFolderName, String errorEmailsFolderName) {
 
-        this.emailPersonalName = EmailPersonalName;
-        this.emailAddress = EmailAddress;
-        this.replyToAddress = ReplyToAddress;
-        this.emailPassword = EmailPassword;
+        this.emailPersonalName = emailPersonalName;
+        this.emailAddress = emailAddress;
+        this.replyToAddress = replyToAddress;
+        this.emailPassword = emailPassword;
 
-        this.senderHost = SenderHost;
-        this.senderPort = SenderPort;
+        this.senderHost = senderHost;
+        this.senderPort = senderPort;
 
-        this.receivingHost = ReceivingHost;
-        this.receivingPort = ReceivingPort;
+        this.receivingHost = receivingHost;
+        this.receivingPort = receivingPort;
 
-        this.inboxFolderName = InboxFolderName;
-        this.processedEmailsFolderName = ProcessedEmailsFolderName;
-        this.errorEmailsFolderName = ErrorEmailsFolderName;
+        this.inboxFolderName = inboxFolderName;
+        this.processedEmailsFolderName = processedEmailsFolderName;
+        this.errorEmailsFolderName = errorEmailsFolderName;
     }
 
     /**
      * Sending and receiving emails without moving or deleting them
      */
-    public EmailHelper(String EmailPersonalName, String EmailAddress, String EmailPassword, String ReplyToAddress,
-                       String SenderHost, String SenderPort,
-                       String ReceivingHost, String ReceivingPort,
-                       String InboxFolderName) {
-        this(EmailPersonalName, EmailAddress, EmailPassword, ReplyToAddress,
-                SenderHost, SenderPort,
-                ReceivingHost, ReceivingPort,
-                InboxFolderName, null, null);
+    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
+                       String senderHost, String senderPort,
+                       String receivingHost, String receivingPort,
+                       String inboxFolderName) {
+        this(emailPersonalName, emailAddress, emailPassword, replyToAddress,
+                senderHost, senderPort,
+                receivingHost, receivingPort,
+                inboxFolderName, null, null);
     }
 
     /**
      * Sending emails only
      */
-    public EmailHelper(String EmailPersonalName, String EmailAddress, String EmailPassword, String ReplyToAddress,
-                       String SenderHost, String SenderPort) {
+    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
+                       String senderHost, String senderPort) {
 
-        this(EmailPersonalName, EmailAddress, EmailPassword, ReplyToAddress,
-                SenderHost, SenderPort,
+        this(emailPersonalName, emailAddress, emailPassword, replyToAddress,
+                senderHost, senderPort,
                 null, null,
                 null, null, null);
     }
@@ -563,13 +563,13 @@ public class EmailHelper {
     /**
      * Receiving emails only
      */
-    public EmailHelper(String EmailPersonalName, String EmailAddress, String EmailPassword, String ReplyToAddress,
-                       String ReceivingHost, String ReceivingPort,
-                       String InboxFolderName) {
-        this(EmailPersonalName, EmailAddress, EmailPassword, ReplyToAddress,
+    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
+                       String receivingHost, String receivingPort,
+                       String inboxFolderName) {
+        this(emailPersonalName, emailAddress, emailPassword, replyToAddress,
                 null, null,
-                ReceivingHost, ReceivingPort,
-                InboxFolderName, null, null);
+                receivingHost, receivingPort,
+                inboxFolderName, null, null);
     }
 
     //endregion

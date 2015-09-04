@@ -15,7 +15,7 @@ public class MainExecute {
 
         String emailPersonalName = "GoMentr Omar";
         String emailAddress = "oaddam@gomentr.com";
-        String emailPassword = "mathyboy99";
+        String emailPassword = "";
         String emailReplyTo = "oaddam@gomentr.com";
 
         String senderHost = "smtp.gmail.com";
