@@ -1,6 +1,7 @@
 package com.gomentr.emailmanager.views;
 
-import com.gomentr.emailmanager.helpers.EmailHelper;
+import com.gomentr.emailmanager.helpers.EmailReceiver;
+import com.gomentr.emailmanager.helpers.EmailSender;
 import com.gomentr.emailmanager.models.ReceivedMessageModel;
 
 import java.util.List;
@@ -32,11 +33,11 @@ public class MainExecute {
         String errorEmailsFolderName = "UnProcessed";
 
         //Email Sender Only
-        EmailHelper emailSenderOnly = new EmailHelper(emailPersonalName, emailAddress, emailPassword, emailReplyTo, senderHost, senderPort);
+        EmailSender emailSenderOnly = new EmailSender(emailPersonalName, emailAddress, emailPassword, emailReplyTo, senderHost, senderPort);
         //emailSenderOnly.sendEmail("11-12", "omaddam@gmail.com", "Testing my sender plugin", "I told you that i am just testing it!!!!");
 
         //Email Receiver Only
-        EmailHelper emailReceiverOnly = new EmailHelper(emailPersonalName, emailAddress, emailPassword, emailReplyTo, receivingHost, receivingPort, inboxFolderName);
+        EmailReceiver emailReceiverOnly = new EmailReceiver(emailPersonalName, emailAddress, emailPassword, emailReplyTo, receivingHost, receivingPort, inboxFolderName, processedEmailsFolderName, errorEmailsFolderName);
         List<ReceivedMessageModel> emails = emailReceiverOnly.readEmails(false);
         System.out.println("Total: " + emails.size());
         for(ReceivedMessageModel message : emails) {
@@ -46,19 +47,6 @@ public class MainExecute {
             System.out.println("Subject: " + message.getSubject());
             System.out.println("Parsed Content:" + message.getParsedContent());// + "\n** Unparsed:" + message.getContent());
         }
-
-        //Email Full Package
-        EmailHelper emailFullPackage = new EmailHelper(emailPersonalName, emailAddress, emailPassword, emailReplyTo, senderHost, senderPort, receivingHost, receivingPort, inboxFolderName, processedEmailsFolderName, errorEmailsFolderName);
-        //emailFullPackage.sendEmail("11-12", "omaddam@gmail.com", "Testing my sender plugin", "I told you that i am just testing it!!!!");
-        /*List<ReceivedMessageModel> emails = emailFullPackage.readEmails(true);
-        System.out.println("Total: " + emails.size());
-        for(ReceivedMessageModel message : emails) {
-            System.out.println("****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************");
-            System.out.println("ID: " + message.getId().toString());
-            System.out.println("From: " + message.getFromAddress());
-            System.out.println("Subject: " + message.getSubject());
-            System.out.println("Parsed Content:" + message.getParsedContent());// + "\n** Unparsed:" + message.getContent());
-        }*/
     }
 
 }

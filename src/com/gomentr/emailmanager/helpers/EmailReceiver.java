@@ -4,19 +4,18 @@ import com.gomentr.emailmanager.models.ReceivedMessageModel;
 import com.gomentr.emailmanager.parsers.*;
 
 import javax.mail.*;
-import javax.mail.internet.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.ArrayList;
 
 /**
- * Created by Omar Addam on 2015-04-12.
+ * Created by Omar Addam on 2015-09-04.
  */
-public class EmailHelper {
+public class EmailReceiver {
 
     //region VARIABLES
 
@@ -30,18 +29,6 @@ public class EmailHelper {
      */
     protected String emailAddress;
     protected String emailPassword;
-
-    /**
-     * The email address used to receive emails
-     */
-    protected String replyToAddress;
-
-    /**
-     * This plugin uses SMPT protocol for sending emails
-     * We only require the host and the port from the user
-     */
-    protected String senderHost;
-    protected String senderPort;
 
     /**
      * This plugin uses IMAP protocol for receiving emails
@@ -65,96 +52,6 @@ public class EmailHelper {
      * folder and deleted from the inbox folder
      */
     protected String errorEmailsFolderName;
-
-    //endregion
-
-    //region EMAIL SENDING METHODS
-
-    /**
-     * Sends an email to someone
-     * We require the email address of the receipt, the subject, and the body
-     * The ID is used to identify an email when the user replies back
-     */
-    public void sendEmail(String id, String to, String subject, String body)
-            throws Exception {
-
-        String replyTo = createRecipientWithId(id);
-        Properties props = prepareEmailSenderProperties();
-
-        Session session = Session.getDefaultInstance(props, null);
-        MimeMessage message = prepareEmailSenderMessage(session, to, replyTo, subject, body);
-
-        Transport transport = PrepareEmailSenderTransport(session);
-        transport.connect(senderHost, emailAddress, emailPassword);
-        transport.sendMessage(message, message.getAllRecipients());
-        transport.close();
-    }
-
-
-
-    /**
-     * Prepares the reply to for the email sender
-     * It will include the email identifier in the reply to
-     */
-    protected String createRecipientWithId(String id) {
-        String[] array = emailAddress.split("@");
-        String replyTo = array[0] + "+" + id + "@" + array[1];
-        return replyTo;
-    }
-
-    /**
-     * Prepares the properties for the email sender
-     */
-    protected Properties prepareEmailSenderProperties() {
-        Properties props = System.getProperties();
-        props.put("mail.smtp.starttls.enable", true);
-        props.setProperty("mail.smtp.ssl.trust", senderHost);
-        props.put("mail.smtp.auth", true);
-        props.put("mail.smtp.host", senderHost);
-        props.put("mail.smtp.user", emailAddress);
-        props.put("mail.smtp.password", emailPassword);
-        props.put("mail.smtp.port", senderPort);
-        return props;
-    }
-
-    /**
-     * Prepares the message to be sent by the email sender
-     */
-    protected MimeMessage prepareEmailSenderMessage(Session session, String to, String replyTo, String subject, String body)
-            throws Exception {
-
-        MimeMessage message = new MimeMessage(session);
-
-        //From
-        InternetAddress fromAddress = new InternetAddress(emailAddress);
-        fromAddress.setPersonal(emailPersonalName);
-        message.setFrom(fromAddress);
-
-        //Reply to
-        InternetAddress[] replyToAddress = new InternetAddress[1];
-        replyToAddress[0] = new InternetAddress(replyTo);
-        replyToAddress[0].setPersonal(emailPersonalName);
-        message.setReplyTo(replyToAddress);
-
-        //To
-        InternetAddress toAddress = new InternetAddress(to);
-        message.addRecipient(Message.RecipientType.TO, toAddress);
-
-        //Subject/Body
-        message.setSubject(subject);
-        message.setText(body);
-
-        return message;
-    }
-
-    /**
-     * Prepares the transport layer for the email sender
-     */
-    protected Transport PrepareEmailSenderTransport(Session session)
-            throws Exception {
-        Transport transport = session.getTransport("smtp");
-        return transport;
-    }
 
     //endregion
 
@@ -350,7 +247,7 @@ public class EmailHelper {
      * The default pattern is /\+[A-Za-z0-9-_]*\@/: GUID
      */
     protected String processEmailReaderMessageID(Message message)
-    throws Exception {
+            throws Exception {
 
         Address toAddress = message.getAllRecipients()[0];
 
@@ -370,21 +267,12 @@ public class EmailHelper {
 
     //region CONSTRUCTORS
 
-    /**
-     * The full package
-     */
-    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
-                       String senderHost, String senderPort,
+    public EmailReceiver(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
                        String receivingHost, String receivingPort,
                        String inboxFolderName, String processedEmailsFolderName, String errorEmailsFolderName) {
-
         this.emailPersonalName = emailPersonalName;
         this.emailAddress = emailAddress;
-        this.replyToAddress = replyToAddress;
         this.emailPassword = emailPassword;
-
-        this.senderHost = senderHost;
-        this.senderPort = senderPort;
 
         this.receivingHost = receivingHost;
         this.receivingPort = receivingPort;
@@ -392,43 +280,6 @@ public class EmailHelper {
         this.inboxFolderName = inboxFolderName;
         this.processedEmailsFolderName = processedEmailsFolderName;
         this.errorEmailsFolderName = errorEmailsFolderName;
-    }
-
-    /**
-     * Sending and receiving emails without moving or deleting them
-     */
-    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
-                       String senderHost, String senderPort,
-                       String receivingHost, String receivingPort,
-                       String inboxFolderName) {
-        this(emailPersonalName, emailAddress, emailPassword, replyToAddress,
-                senderHost, senderPort,
-                receivingHost, receivingPort,
-                inboxFolderName, null, null);
-    }
-
-    /**
-     * Sending emails only
-     */
-    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
-                       String senderHost, String senderPort) {
-
-        this(emailPersonalName, emailAddress, emailPassword, replyToAddress,
-                senderHost, senderPort,
-                null, null,
-                null, null, null);
-    }
-
-    /**
-     * Receiving emails only
-     */
-    public EmailHelper(String emailPersonalName, String emailAddress, String emailPassword, String replyToAddress,
-                       String receivingHost, String receivingPort,
-                       String inboxFolderName) {
-        this(emailPersonalName, emailAddress, emailPassword, replyToAddress,
-                null, null,
-                receivingHost, receivingPort,
-                inboxFolderName, null, null);
     }
 
     //endregion
