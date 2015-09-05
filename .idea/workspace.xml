@@ -27,7 +27,85 @@
     <favorites_list name="grails-email-reply-notification" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="EmailHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Helpers/EmailHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="575" column="0" selection-start-line="575" selection-start-column="0" selection-end-line="575" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#EmailHelper#0" expanded="false" />
+                <element signature="e#382#400#0" expanded="false" />
+                <element signature="docComment;field#emailPersonalName#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#emailAddress#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#replyToAddress#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#senderHost#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#receivingHost#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#inboxFolderName#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#processedEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;field#errorEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
+                <element signature="e#1677#1707#0" expanded="false" />
+                <element signature="docComment;method#SendEmail#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#SendEmail#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
+                <element signature="e#4664#4696#0" expanded="false" />
+                <element signature="method#readEmails#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#MoveMessageToAnotherFolder#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#getText#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser1#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser2#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser3#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser4#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser5#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser6#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser7#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_Parser8#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ParseEmailReaderMessageContent_ParserFinal#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
+                <element signature="method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
+                <element signature="method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
+                <element signature="method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
+                <element signature="docComment;method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
+                <element signature="method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceivedMessageModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Models/ReceivedMessageModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.60096157">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,10 +133,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -83,8 +159,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -113,7 +187,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -127,12 +201,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -151,6 +227,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Application.MainExecute">
     <configuration default="false" name="MainExecute" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -409,6 +486,18 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
     <configuration default="false" name="javax.jar" type="JarApplication" factoryName="JAR Application">
@@ -418,8 +507,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.MainExecute" />
-      <item index="1" class="java.lang.String" itemvalue="JAR Application.javax.jar" />
+      <item index="0" class="java.lang.String" itemvalue="JAR Application.javax.jar" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MainExecute" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -435,40 +524,41 @@
       <option name="number" value="Default" />
       <updated>1438796368474</updated>
       <workItem from="1438796371402" duration="3012000" />
+      <workItem from="1441305082872" duration="1914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3012000" />
+    <option name="totallyTimeSpent" value="4926000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="0" y="0" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32418162" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32418162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -487,17 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/EmailHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16648531">
-          <caret line="119" column="44" selection-start-line="119" selection-start-column="44" selection-end-line="119" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -505,6 +584,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66594124">
           <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/EmailHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="575" column="0" selection-start-line="575" selection-start-column="0" selection-end-line="575" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#EmailHelper#0" expanded="false" />
+            <element signature="e#382#400#0" expanded="false" />
+            <element signature="docComment;field#emailPersonalName#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#emailAddress#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#replyToAddress#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#senderHost#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#receivingHost#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#inboxFolderName#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#processedEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;field#errorEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
+            <element signature="e#1677#1707#0" expanded="false" />
+            <element signature="docComment;method#SendEmail#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#SendEmail#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
+            <element signature="e#4664#4696#0" expanded="false" />
+            <element signature="method#readEmails#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#MoveMessageToAnotherFolder#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#getText#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser1#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser2#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser3#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser4#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser5#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser6#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser7#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_Parser8#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ParseEmailReaderMessageContent_ParserFinal#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
+            <element signature="method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
+            <element signature="method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
+            <element signature="method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
+            <element signature="docComment;method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
+            <element signature="method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/ReceivedMessageModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60096157">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
