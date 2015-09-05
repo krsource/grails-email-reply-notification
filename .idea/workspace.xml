@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="grails-email-reply-notification:jar" />
+      <artifact name="EmailNotificationManager:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -28,84 +28,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EmailHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Helpers/EmailHelper.java">
+      <file leaf-file-name="MainExecute.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/views/MainExecute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="575" column="0" selection-start-line="575" selection-start-column="0" selection-end-line="575" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.72817135">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
-                <element signature="docComment;class#EmailHelper#0" expanded="false" />
-                <element signature="e#382#400#0" expanded="false" />
-                <element signature="docComment;field#emailPersonalName#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#emailAddress#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#replyToAddress#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#senderHost#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#receivingHost#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#inboxFolderName#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#processedEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;field#errorEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
-                <element signature="e#1677#1707#0" expanded="false" />
-                <element signature="docComment;method#SendEmail#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#SendEmail#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
-                <element signature="e#4664#4696#0" expanded="false" />
-                <element signature="method#readEmails#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#MoveMessageToAnotherFolder#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#getText#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser1#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser2#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser3#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser4#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser5#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser6#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser7#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_Parser8#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ParseEmailReaderMessageContent_ParserFinal#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
-                <element signature="method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
-                <element signature="method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
-                <element signature="method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
-                <element signature="docComment;method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
-                <element signature="method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReceivedMessageModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Models/ReceivedMessageModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60096157">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,8 +63,21 @@
       <list>
         <option value="$PROJECT_DIR$/EmailNotificationReply.iml" />
         <option value="$PROJECT_DIR$/grails-email-reply-notification.properties" />
-        <option value="$PROJECT_DIR$/src/Helpers/EmailHelper.java" />
         <option value="$PROJECT_DIR$/src/Views/MainExecute.java" />
+        <option value="$PROJECT_DIR$/src/Helpers/EmailHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/ContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/HtmlBlockquoteContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/TextContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/ScriptContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/GmailContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/HtmlContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/QuoteContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/CssContentParser.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/helpers/EmailHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/models/ReceivedMessageModel.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/helpers/EmailSender.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/helpers/EmailReceiver.java" />
+        <option value="$PROJECT_DIR$/src/com/gomentr/emailmanager/views/MainExecute.java" />
       </list>
     </option>
   </component>
@@ -133,8 +89,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -159,6 +117,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -187,7 +147,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emailmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -201,14 +169,78 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emailmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parsers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-email-reply-notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-email-reply-notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emailmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-email-reply-notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-email-reply-notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emailmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-email-reply-notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-email-reply-notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -226,8 +258,8 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="grails-email-reply-notification" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.side.proportion" value="0.31149426" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RunManager" selected="Application.MainExecute">
     <configuration default="false" name="MainExecute" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -237,12 +269,12 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="Views.MainExecute" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="MAIN_CLASS_NAME" value="com.gomentr.emailmanager.views.MainExecute" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -494,12 +526,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
     <configuration default="false" name="javax.jar" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="JAR_PATH" value="$PROJECT_DIR$/lib/javax.mail.jar" />
@@ -507,8 +533,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JAR Application.javax.jar" />
-      <item index="1" class="java.lang.String" itemvalue="Application.MainExecute" />
+      <item index="0" class="java.lang.String" itemvalue="Application.MainExecute" />
+      <item index="1" class="java.lang.String" itemvalue="JAR Application.javax.jar" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -523,17 +549,17 @@
       <created>1438796368474</created>
       <option name="number" value="Default" />
       <updated>1438796368474</updated>
-      <workItem from="1438796371402" duration="3012000" />
-      <workItem from="1441305082872" duration="1914000" />
+      <workItem from="1438796371402" duration="3870000" />
+      <workItem from="1441380377490" duration="9456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4926000" />
+    <option name="totallyTimeSpent" value="13326000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -543,29 +569,31 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -573,6 +601,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/views/MainExecute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-email-reply-notification.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -580,84 +618,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/MainExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/ContentParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66594124">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.092491835">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/EmailHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/CssContentParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.092491835">
+          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/GmailContentParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="575" column="0" selection-start-line="575" selection-start-column="0" selection-end-line="575" selection-end-column="0" />
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/ScriptContentParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12948857">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/QuoteContentParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25897714">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/TextContentParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.055495102">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_75/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33278418">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/models/ReceivedMessageModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39499456">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding>
-            <element signature="docComment;class#EmailHelper#0" expanded="false" />
-            <element signature="e#382#400#0" expanded="false" />
-            <element signature="docComment;field#emailPersonalName#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#emailAddress#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#replyToAddress#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#senderHost#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#receivingHost#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#inboxFolderName#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#processedEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;field#errorEmailsFolderName#0;class#EmailHelper#0" expanded="false" />
-            <element signature="e#1677#1707#0" expanded="false" />
-            <element signature="docComment;method#SendEmail#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#SendEmail#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#CreateRecipientWithId#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#PrepareEmailSenderProperties#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#PrepareEmailSenderMessage#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#PrepareEmailSenderTransport#0;class#EmailHelper#0" expanded="false" />
-            <element signature="e#4664#4696#0" expanded="false" />
-            <element signature="method#readEmails#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#PrepareEmailReaderProperties#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#PrepareEmailReaderStore#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#PrepareEmailReaderFolder#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#MoveMessageToAnotherFolder#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ProcessEmailReaderMessage#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ProcessEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#getText#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser1#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser2#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser3#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser4#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser5#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser6#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser7#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_Parser8#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ParseEmailReaderMessageContent_ParserFinal#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#ProcessEmailReaderMessageID#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
-            <element signature="method#EmailHelper#0;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
-            <element signature="method#EmailHelper#1;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
-            <element signature="method#EmailHelper#2;class#EmailHelper#0" expanded="false" />
-            <element signature="docComment;method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
-            <element signature="method#EmailHelper#3;class#EmailHelper#0" expanded="false" />
+            <element signature="method#ReceivedMessageModel#0;class#ReceivedMessageModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/ReceivedMessageModel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/parsers/HtmlContentParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60096157">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.110990204">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/helpers/EmailReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33297062">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#447#465#0" expanded="false" />
+            <element signature="e#1441#1473#0" expanded="false" />
+            <element signature="method#readEmails#0;class#EmailReceiver#0" expanded="false" />
+            <element signature="method#prepareEmailReaderProperties#0;class#EmailReceiver#0" expanded="false" />
+            <element signature="method#prepareEmailReaderStore#0;class#EmailReceiver#0" expanded="false" />
+            <element signature="method#prepareEmailReaderFolder#0;class#EmailReceiver#0" expanded="false" />
+            <element signature="method#moveMessageToAnotherFolder#0;class#EmailReceiver#0" expanded="false" />
+            <element signature="method#processEmailReaderMessage#0;class#EmailReceiver#0" expanded="false" />
+            <element signature="e#8983#9004#0" expanded="false" />
+            <element signature="method#EmailReceiver#0;class#EmailReceiver#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/helpers/EmailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33297062">
+          <caret line="131" column="4" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#320#338#0" expanded="false" />
+            <element signature="e#930#960#0" expanded="false" />
+            <element signature="method#sendEmail#0;class#EmailSender#0" expanded="false" />
+            <element signature="e#3945#3966#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gomentr/emailmanager/views/MainExecute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72817135">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,11 +742,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>grails-email-reply-notification:jar</last-edited>
+          <last-edited>EmailNotificationManager:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.31149426" />
                 <option value="0.5" />
               </list>
             </option>
